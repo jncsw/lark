@@ -168,7 +168,7 @@ func newMethodOption(options []MethodOptionFunc) *MethodOption {
 
 func newClient(tenantKey string, options []ClientOptionFunc) *Lark {
 	r := &Lark{
-		timeout:      time.Second * 3,
+		timeout:      time.Second * 30,
 		isISV:        false,
 		tenantKey:    tenantKey,
 		store:        NewStoreMemory(),

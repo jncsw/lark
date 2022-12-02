@@ -434,13 +434,13 @@ type DocGalleryStyle struct {
 // 支持指定图片宽高，为了保证图片显示效果，会根据图片原始宽高比例进行校验计算，最终的显示效果可能与手动指定的宽高有一定区别。
 type DocImageItem struct {
 	FileToken string `json:"fileToken,omitempty"` // 图片 token，比如boxcnOj88GDkmWGm2zsTyCBqoLb，不支持编辑
-	Width     int    `json:"width,omitempty"`     // 图片宽，单位px
-	Height    int    `json:"height,omitempty"`    // 图片高，单位px
+	Width     float64    `json:"width,omitempty"`     // 图片宽，单位px
+	Height    float64    `json:"height,omitempty"`    // 图片高，单位px
 }
 
 func (r *DocImageItem) SetWidthHeight(width, height int) *DocImageItem {
-	r.Width = width
-	r.Height = height
+	r.Width = float64(width)
+	r.Height = float64(height)
 	return r
 }
 
